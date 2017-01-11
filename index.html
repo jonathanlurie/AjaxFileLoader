@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Read some files</title>
+
+  <script src="js/AjaxFileLoader.js"></script>
+  <script src="js/vendor/pako.min.js"></script>
+
+  <style>
+    body{
+      font-family: sans-serif;
+      text-align: justify;
+    }
+
+    .aTextyDiv{
+      margin: 20px;
+      padding: 20px;
+      background-color: purple;
+      color: white;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="aTextyDiv" id="uncompressedContent"></div>
+  <div class="aTextyDiv" id="compressedContent"></div>
+
+  <script>
+
+  // loading an uncompressed text file
+  AjaxFileLoader.loadTextFile(
+    // file URL
+    "data/uncompressedfile.txt",
+
+    // success callback
+    function(data){
+      var textDiv = document.getElementById("uncompressedContent");
+      textDiv.innerHTML = data;
+    },
+
+    // error callback
+    function(error){
+      console.log(error);
+    }
+  )
+
+
+  // loading a compressed (gz, not tar.gz !) text file
+  AjaxFileLoader.loadCompressedTextFile(
+    // file URL
+    "data/compressedfile.txt.gz",
+
+    // success callback
+    function(data){
+      var textDiv = document.getElementById("compressedContent");
+      textDiv.innerHTML = data;
+    },
+
+    // error callback
+    function(error){
+      console.log(error);
+    }
+  )
+
+  </script>
+
+</body>
+</html>
