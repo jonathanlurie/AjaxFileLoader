@@ -40,7 +40,12 @@ class AjaxFileLoader{
   }
 
 
-
+  /**
+  * Loads a compressed text file (gz) and makes its content available thru a String.
+  * @param {String} url - URL of the file to load
+  * @param {callback} successCallback - function to call when the file is loaded. Called with one String argument.
+  * @param {callback} errorCallback - function to call when the file failed to load. Called with a Number argument (http status).
+  */
   static loadCompressedTextFile(url, successCallback, errorCallback) {
     if(! AjaxFileLoader.isPakoAvailable()){
       errorCallback("Pako lib is not available, please include it to your project.")
@@ -100,6 +105,46 @@ class AjaxFileLoader{
     }
 
     return isIt;
+  }
+
+
+  /**
+  * Loads a binary file and makes its content available thru an array buffer.
+  * @param {String} url - URL of the file to load
+  * @param {callback} successCallback - function to call when the file is loaded. Called with one array buffer argument.
+  * @param {callback} errorCallback - function to call when the file failed to load. Called with a Number argument (http status).
+  */
+  static loadBinaryFile(url, successCallback, errorCallback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = "arraybuffer";
+
+    xhr.onload = function (oEvent) {
+      var status = xhr.status;
+      var arrayBuffer = xhr.response;
+
+      if (arrayBuffer) {
+        var blob = new Blob([arrayBuffer]);
+        var fileReader = new FileReader();
+
+        fileReader.onload = function(event) {
+          successCallback && successCallback(event.target.result);
+        };
+
+        fileReader.onerror = function(event){
+          errorCallback && errorCallback(event);
+        }
+
+        fileReader.readAsArrayBuffer(blob);
+      }
+    };
+
+    xhr.onerror = function(e){
+      console.error("Can't find the file " + url);
+      errorCallback && errorCallback(status);
+    }
+
+    xhr.send(null);
   }
 
 

@@ -27,6 +27,7 @@
 
   <script>
 
+/*
   // loading an uncompressed text file
   AjaxFileLoader.loadTextFile(
     // file URL
@@ -43,8 +44,9 @@
       console.log(error);
     }
   )
+*/
 
-
+/*
   // loading a compressed (gz, not tar.gz !) text file
   AjaxFileLoader.loadCompressedTextFile(
     // file URL
@@ -61,6 +63,36 @@
       console.log(error);
     }
   )
+*/
+
+/*
+  // loading a compressed (gz, not tar.gz !) text file
+  AjaxFileLoader.loadBinaryFile(
+    // file URL
+    "data/somebinaryfile_full8_400um_optbal.mnc",
+
+    // success callback
+    function(data){
+      var textDiv = document.getElementById("compressedContent");
+      var infoString = null;
+
+      console.log(data);
+
+      if(data){
+        infoString = "Raw binary data successfuly loaded. Length: " + data.byteLength + "Bytes.";
+      }else{
+        infoString = "Data were not loaded...";
+      }
+
+      textDiv.innerHTML = infoString;
+    },
+
+    // error callback
+    function(error){
+      console.log(error);
+    }
+  )
+*/
 
   </script>
 

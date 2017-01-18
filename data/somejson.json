@@ -1,0 +1,189 @@
+{
+	"data_type": "uint8",
+	"type": "image",
+	"scales": [
+		{
+			"key": "jpeg/20um",
+			"resolution": [
+				20000,
+				20000,
+				20000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				6572,
+				7404,
+				5711
+			]
+		},
+		{
+			"key": "jpeg/40um",
+			"resolution": [
+				40000,
+				40000,
+				40000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				3286,
+				3702,
+				2856
+			]
+		},
+		{
+			"key": "jpeg/80um",
+			"resolution": [
+				80000,
+				80000,
+				80000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				1643,
+				1851,
+				1428
+			]
+		},
+		{
+			"key": "jpeg/160um",
+			"resolution": [
+				160000,
+				160000,
+				160000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				822,
+				926,
+				714
+			]
+		},
+		{
+			"key": "jpeg/320um",
+			"resolution": [
+				320000,
+				320000,
+				320000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				411,
+				463,
+				357
+			]
+		},
+		{
+			"key": "jpeg/640um",
+			"resolution": [
+				640000,
+				640000,
+				640000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				206,
+				232,
+				179
+			]
+		},
+		{
+			"key": "jpeg/1280um",
+			"resolution": [
+				1280000,
+				1280000,
+				1280000
+			],
+			"encoding": "jpeg",
+			"voxel_offset": [
+				0,
+				0,
+				0
+			],
+			"chunk_sizes": [
+				[
+					64,
+					64,
+					64
+				]
+			],
+			"size": [
+				103,
+				116,
+				90
+			]
+		}
+	],
+	"num_channels": 1
+}
